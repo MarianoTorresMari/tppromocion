@@ -1,34 +1,29 @@
-// Espera a que todo el contenido de la página se cargue antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO ---
     const form = document.getElementById('formulario-contacto');
     const btnConsultar = document.getElementById('btn-consultar');
     const datosGuardadosDiv = document.getElementById('datos-guardados');
 
-    // Solo ejecutar si estamos en la página de contacto
     if (form) {
-        // Evento para cuando se envía el formulario
         form.addEventListener('submit', (event) => {
-            // Evita que el formulario se envíe de la forma tradicional (recargando la página)
+            // Evita que el formulario se envíe recargando la página, lo agregue para mas seguridad 
             event.preventDefault();
 
-            // 1. Obtener los datos del formulario
+            //  Obtener los datos del formulario
             const nombre = document.getElementById('nombre').value;
             const email = document.getElementById('email').value;
             const localidad = document.getElementById('localidad').value;
             const recomendacion = document.getElementById('recomendacion').value;
 
-            // 2. Crear un objeto con los datos
+            //  Crear un objeto con los datos
             const nuevoContacto = { nombre, email, localidad, recomendacion };
 
-            // 3. Guardar los datos en el 'localStorage' del navegador
+            //  Guardar los datos en el 'localStorage' del navegador asi no se borren cuando se reinicie la pagina, y quede almacenada de forma local
             let contactos = JSON.parse(localStorage.getItem('contactos')) || [];
             contactos.push(nuevoContacto);
             localStorage.setItem('contactos', JSON.stringify(contactos));
 
-            // 4. Mostrar un mensaje de éxito y limpiar el formulario
-            alert('¡Gracias por tu mensaje! Hemos guardado tus datos.');
+            //  Mostrar un mensaje de exito y limpiar el formulario
+            alert('¡Gracias por tu mensaje! Tus datos ya fueron guardados.');
             form.reset();
         });
     }
@@ -36,13 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Evento para cuando se hace clic en el botón "Consultar Datos Guardados"
     if (btnConsultar) {
         btnConsultar.addEventListener('click', () => {
-            // 1. Obtener los datos guardados del localStorage
+            //  Obtener los datos guardados del localStorage
             const contactos = JSON.parse(localStorage.getItem('contactos')) || [];
 
-            // 2. Limpiar el div donde se mostrarán los datos
+            //  Limpiar el div donde se mostrarán los datos, esto evita problemas de que se superpongan datos
             datosGuardadosDiv.innerHTML = ''; 
 
             if (contactos.length === 0) {
+                /* Gracias a esto no se envian solicitudes vacias, y siempre que no haya ningun dato guardado, no tenga que pasar por todo lo de mostrar el contacto */
                 datosGuardadosDiv.innerHTML = '<p>No hay datos guardados aún.</p>';
             } else {
                 // 3. Mostrar cada contacto guardado
