@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionaria Futuro</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO CON MENÚ PRINCIPAL SIEMPRE VISIBLE -->
+    <header class="header">
+        <div class="logo-container">
+            <!-- Espacio para tu logo. Reemplaza "logo.png" con el nombre de tu archivo de logo -->
+            <img src="/img/logo.png" alt="Logo Concesionaria Futuro" class="logo">
+        </div>
+        <nav class="main-nav">
+            <a href="/index.html">Inicio</a>
+            <a href="./SobreNosotros.html">Sobre Nosotros</a>
+            <a href="./ProductosYServicios.html">Productos y Servicios</a>
+            <a href="./Novedades.html">Novedades</a>
+            <a href="./Contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+         <!-- SECCIÓN DE CONTACTO (CON FORMULARIO) -->
+        <section id="contacto" class="seccion-contenido" style="display:none;">
+            <h2>Contacto</h2>
+            <p>¿Tienes preguntas? ¡Envíanos un mensaje!</p>
+            
+            <form id="formulario-contacto">
+                <label for="nombre">Apellido y Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="localidad">Localidad:</label>
+                <input type="text" id="localidad" name="localidad" required>
+
+                <label for="recomendacion">¿Quién te recomendó nuestra página?</label>
+                <input type="text" id="recomendacion" name="recomendacion">
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+
+            <button id="btn-consultar">Consultar Datos Guardados</button>
+            
+            <div id="datos-guardados">
+                <!-- Aquí se mostrarán los datos de los visitantes -->
+            </div>
+        </section>
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2025 Concesionaria Futuro. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <!-- Agrega aquí los enlaces a tus redes sociales -->
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="/script.js"></script>
+</body>
+</html>
