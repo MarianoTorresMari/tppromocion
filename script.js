@@ -1,12 +1,6 @@
 // Espera a que todo el contenido de la página se cargue antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Mostrar las secciones cuando la página carga
-    const secciones = document.querySelectorAll('.seccion-contenido');
-    secciones.forEach(seccion => {
-        seccion.style.display = 'block';
-    });
-
     // --- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO ---
     const form = document.getElementById('formulario-contacto');
     const btnConsultar = document.getElementById('btn-consultar');
