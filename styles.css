@@ -11,6 +11,7 @@ html, body {
 
 body {
     background-color: #111;
+    /* ARCHIVO DE IMAGEN PARA SER USADO COMO IMAGEN DE FONDO DE SITIO */
     background-image: url('./img/fondo.jpg');
     background-size: cover;
     background-position: center;
@@ -20,14 +21,14 @@ body {
     flex-direction: column;
 }
 
-/*  COLORES CORPORATIVOS  */
+/*  COLORES CORPORATIVOS 2 COMO MINIMO  */
 :root {
     --color-primario: #0a192f;
     --color-secundario: #64ffda;
     --color-texto: #ccd6f6;
 }
 
-/*  ENCABEZADO Y MENÚ (DISEÑO SIMPLE)  */
+/*  ENCABEZADO Y MENÚ SIEMPRE VISIBLE */
 .header {
     background-color: var(--color-primario);
     color: var(--color-texto);
@@ -48,7 +49,6 @@ body {
     height: 90px;
 }
 
-/* Estilos para el nav y la lista de navegación */
 .main-nav {
     display: flex;
     align-items: center;
@@ -68,7 +68,6 @@ body {
     padding: 0;
 }
 
-/* Estilos para los enlaces del menú */
 .main-nav a {
     color: var(--color-texto);
     text-decoration: none;
@@ -80,7 +79,6 @@ body {
     display: block;
 }
 
-/* Efecto de subrayado animado al pasar el cursor */
 .main-nav a::after {
     content: '';
     position: absolute;
@@ -100,7 +98,6 @@ body {
     width: 100%;
 }
 
-/* Estilo para el enlace de la página activa */
 .main-nav a.active {
     color: var(--color-secundario);
 }
@@ -131,9 +128,75 @@ main {
     color: var(--color-secundario);
     border-bottom: 2px solid var(--color-secundario);
     padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-/*  GALERÍA DE IMÁGENES  */
+.seccion-contenido h3 {
+    color: var(--color-secundario);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.noticia {
+    background-color: rgba(100, 255, 218, 0.05);
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 3px solid var(--color-secundario);
+    border-radius: 4px;
+}
+
+.noticia h3 {
+    margin-top: 0;
+}
+
+.contenedor-con-sidebar {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*  MENIU LATERAL SECUNDARIO  */
+.menu-lateral {
+    background-color: rgba(10, 25, 47, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: fit-content;
+    position: sticky;
+    top: 140px;
+    flex-shrink: 0;
+}
+
+.menu-lateral h3 {
+    color: var(--color-secundario);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-secundario);
+    padding-bottom: 8px;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin: 10px 0;
+}
+
+.menu-lateral a {
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: block;
+    padding: 8px 0;
+}
+
+.menu-lateral a:hover {
+    color: var(--color-secundario);
+}
+
+/*  GALERIA DE IMAGGENES  */
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -151,6 +214,57 @@ main {
     object-fit: cover;
     border-radius: 5px;
     border: 3px solid var(--color-secundario);
+}
+
+.lista-servicios {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.servicio-item {
+    background-color: rgba(100, 255, 218, 0.05);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--color-secundario);
+}
+
+.destacados-home {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.destacado {
+    background-color: rgba(100, 255, 218, 0.05);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secundario);
+}
+
+.destacado h4 {
+    color: var(--color-secundario);
+    margin-bottom: 8px;
+}
+
+.llamado-accion {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.enlace-destacado {
+    color: var(--color-secundario);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-secundario);
+    transition: all 0.3s;
+}
+
+.enlace-destacado:hover {
+    color: #4dd4b5;
+    border-bottom-color: #4dd4b5;
 }
 
 /*  FORMULARIO DE CONTACTO  */
@@ -199,7 +313,7 @@ main {
     border-left: 5px solid var(--color-secundario);
 }
 
-/*  PIE DE PÁGINA (FOOTER)  */
+/*  PIE DE PÁGINA  */
 footer {
     background-color: var(--color-primario);
     color: var(--color-texto);
@@ -215,11 +329,8 @@ footer {
     margin: 0 10px;
 }
 
-/* ======================================================================= */
-/*  MEDIA QUERY PARA RESPONSIVE (PANTALLAS PEQUEÑAS)  */
+/*  RESPONSIVE  */
 @media (max-width: 768px) {
-
-    /* --- AJUSTES DEL ENCABEZADO --- */
     .header {
         flex-direction: column;
         padding: 15px;
@@ -241,7 +352,6 @@ footer {
         font-size: 16px;
     }
 
-    /* --- AJUSTES DEL CONTENIDO --- */
     main {
         padding-top: 300px;
     }
@@ -250,8 +360,17 @@ footer {
         padding: 15px 20px;
     }
 
-    /* --- AJUSTES DE LA GALERÍA --- */
     .galeria {
         grid-template-columns: 1fr;
+    }
+
+    .contenedor-con-sidebar {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        position: relative;
+        top: 0;
     }
 }
