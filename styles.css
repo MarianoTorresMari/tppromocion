@@ -10,22 +10,12 @@ html, body {
 }
 
 body {
-    background-color: #111; 
-    overflow-x: hidden; 
-    
-    display: flex;
-    flex-direction: column;
-}
-
-body {
     background-color: #111;
     background-image: url('./img/fondo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     overflow-x: hidden; 
-    
     display: flex;
     flex-direction: column;
 }
@@ -55,18 +45,28 @@ body {
 }
 
 .logo-container .logo {
-    height: 90px; /* Ajusta el tamaño de tu logo aquí */
+    height: 90px;
 }
 
-/* Estilos para la lista de navegación */
+/* Estilos para el nav y la lista de navegación */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
 .main-nav ul {
     margin: 0;
     padding: 0;
-    list-style: none; /* Quita las viñetas de la lista */
+    list-style: none;
     display: flex;
-    gap: 25px; /* Espacio entre los elementos del menú */
+    gap: 25px;
+    align-items: center;
 }
 
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
 
 /* Estilos para los enlaces del menú */
 .main-nav a {
@@ -75,8 +75,9 @@ body {
     font-size: 18px;
     font-weight: 500;
     padding: 5px 0;
-    position: relative; /* Necesario para la animación del subrayado */
+    position: relative;
     transition: color 0.3s ease;
+    display: block;
 }
 
 /* Efecto de subrayado animado al pasar el cursor */
@@ -96,27 +97,28 @@ body {
 }
 
 .main-nav a:hover::after {
-    width: 100%; /* El subrayado se expande al 100% en hover */
+    width: 100%;
 }
 
-/* Estilo para el enlace de la página activa (¡IMPORTANTE!) */
+/* Estilo para el enlace de la página activa */
 .main-nav a.active {
     color: var(--color-secundario);
 }
+
 .main-nav a.active::after {
     width: 100%;
 }
 
 /*  CONTENIDO PRINCIPAL  */
 main {
-    flex: 1; /* Hace que el "main" ocupe todo el espacio vertical disponible */
+    flex: 1;
     position: relative;
     z-index: 1;
-    padding-top: 80px; /* Espacio para el encabezado fijo */
+    padding-top: 120px;
 }
 
 .seccion-contenido {
-    background-color: rgba(10, 25, 47, 0.85); /* Fondo semitransparente para que se vea el desenfoque */
+    background-color: rgba(10, 25, 47, 0.85);
     color: var(--color-texto);
     margin: 20px auto;
     padding: 20px 40px;
@@ -213,28 +215,26 @@ footer {
     margin: 0 10px;
 }
 
-
 /* ======================================================================= */
 /*  MEDIA QUERY PARA RESPONSIVE (PANTALLAS PEQUEÑAS)  */
-/* Estas reglas se aplicarán solo en pantallas de 768px de ancho o menos */
 @media (max-width: 768px) {
 
     /* --- AJUSTES DEL ENCABEZADO --- */
-    header {
-        /* El menú se apila verticalmente debajo del logo */
+    .header {
         flex-direction: column;
         padding: 15px;
     }
 
     .main-nav {
-        margin-top: 15px; /* Espacio entre el logo y el menú */
+        margin-top: 15px;
+        width: 100%;
     }
 
     .main-nav ul {
-        /* Los enlaces se centran y se apilan */
         flex-direction: column;
         align-items: center;
-        gap: 15px; /* Reduce el espacio vertical entre enlaces */
+        gap: 15px;
+        width: 100%;
     }
 
     .main-nav a {
@@ -242,6 +242,10 @@ footer {
     }
 
     /* --- AJUSTES DEL CONTENIDO --- */
+    main {
+        padding-top: 300px;
+    }
+
     .seccion-contenido {
         padding: 15px 20px;
     }
