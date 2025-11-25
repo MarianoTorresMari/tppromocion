@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos y Servicios - Concesionaria Futuro</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <title>Productos y Servicios - MTM´s automotors</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
     <!-- ENCABEZADO CON MENÚ PRINCIPAL SIEMPRE VISIBLE -->
     <header class="header">
         <div class="logo-container">
-            <img src="/img/logo.png" alt="Logo Concesionaria Futuro" class="logo">
+            <a href="/index.html"><img src="/img/logo.png" alt="Logo MTM´s automotors" class="logo"></a>
         </div>
         <nav class="main-nav">
             <ul>
@@ -24,38 +25,82 @@
         </nav>
     </header>
 
-    <main>
-        <!-- SECCIÓN PRODUCTOS Y SERVICIOS (CON GALERÍA) -->
-        <section id="productos" class="seccion-contenido">
-            <h2>Nuestros Vehículos</h2>
-            <div class="galeria">
-                <div class="galeria-item">
-                    <img src="../img/auto1.jpg" alt="Modelo de auto 1">
-                    <h3>Honda Civic</h3>
+    <div class="contenedor-con-sidebar">
+        <!-- MENÚ LATERAL SECUNDARIO -->
+        <aside class="menu-lateral">
+            <h3>Categorías</h3>
+            <ul>
+                <li><a href="#sedanes">Sedanes</a></li>
+                <li><a href="#suvs">SUVs</a></li>
+                <li><a href="#compactos">Compactos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <!-- SECCIÓN PRODUCTOS Y SERVICIOS (CON GALERÍA) -->
+            <section id="productos" class="seccion-contenido">
+                <h2>Nuestros Vehículos</h2>
+                <p>Explora nuestra selección de vehículos de última generación. Cada modelo está diseñado para brindarte confort, tecnología y eficiencia.</p>
+                
+                <div class="galeria">
+                    <div class="galeria-item">
+                        <img src="../img/auto1.jpg" alt="Honda Civic">
+                        <h3>Honda Civic</h3>
+                        <p>Elegancia y tecnología en cada detalle.</p>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="../img/auto2.jpg" alt="Peugeot 208">
+                        <h3>Peugeot 208</h3>
+                        <p>Compacto urbano con estilo europeo.</p>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="../img/auto3.jpg" alt="Toyota Yaris">
+                        <h3>Toyota Yaris</h3>
+                        <p>Eficiencia y confiabilidad japonesa.</p>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="../img/auto4.jpg" alt="Ford Territory">
+                        <h3>Ford Territory</h3>
+                        <p>SUV espaciosa para toda la familia.</p>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="../img/auto5.jpg" alt="Chevrolet Tracker">
+                        <h3>Chevrolet Tracker</h3>
+                        <p>Aventura y comodidad en un solo vehículo.</p>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="../img/auto6.jpg" alt="Hyundai Genesis">
+                        <h3>Hyundai Genesis</h3>
+                        <p>Lujo y potencia en estado puro.</p>
+                    </div>
                 </div>
-                <div class="galeria-item">
-                    <img src="../img/auto2.jpg" alt="Modelo de auto 2">
-                    <h3>Peugeot 208</h3>
+            </section>
+
+            <!-- SECCIÓN SERVICIOS -->
+            <section id="servicios" class="seccion-contenido">
+                <h2>Nuestros Servicios</h2>
+                <div class="lista-servicios">
+                    <div class="servicio-item">
+                        <h3>🔧 Mantenimiento Preventivo</h3>
+                        <p>Mantén tu vehículo en óptimas condiciones con nuestros planes de mantenimiento programado.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <h3>💰 Financiación Flexible</h3>
+                        <p>Ofrecemos planes de financiamiento adaptados a tus necesidades con las mejores tasas del mercado.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <h3>🚗 Vehículos Usados</h3>
+                        <p>Contamos con una selección de vehículos seminuevos certificados con garantía.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <h3>🛡️ Seguros</h3>
+                        <p>Te ayudamos a encontrar el seguro perfecto para proteger tu inversión.</p>
+                    </div>
                 </div>
-                <div class="galeria-item">
-                    <img src="../img/auto3.jpg" alt="Modelo de auto 3">
-                    <h3>Toyota Yaris</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="../img/auto4.jpg" alt="Modelo de auto 4">
-                    <h3>Ford Territory</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="../img/auto5.jpg" alt="Modelo de auto 5">
-                    <h3>Chevrolet Tracker</h3>
-                </div>
-                <div class="galeria-item">
-                    <img src="../img/auto6.jpg" alt="Modelo de auto 6">
-                    <h3>Hyundai Genesis</h3>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <!-- PIE DE PÁGINA -->
     <footer>
